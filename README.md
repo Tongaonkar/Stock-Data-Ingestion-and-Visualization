@@ -1,4 +1,4 @@
-# Stock Data Analysis and Visualization
+# Stock Data Ingestion and Visualization
 
 ## Table of Contents
 - [Introduction](#introduction)

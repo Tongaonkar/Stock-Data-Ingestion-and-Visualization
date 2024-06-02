@@ -1,35 +1,26 @@
 # Stock Data Analysis and Visualization
 
-![Project Banner](path/to/banner/image) <!-- Optional -->
-
 ## Table of Contents
 - [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Data Columns](#data-columns)
-- [Setup and Installation](#setup-and-installation)
-- [Usage](#usage)
-- [Grafana Dashboards](#grafana-dashboards)
-- [Contributing](#contributing)
-- [License](#license)
+- [Architecture](#architecture)
+- [Overview](#overview)
+- [Schema](#schema)
+- [Author](#author)
+- [Acknowledgements](#Acknowledgements)
 
 ## Introduction
-This project is designed to analyze and visualize stock data for SPY, QQQ, and DIA. The data includes various metrics such as price, trading volume, intraday volatility, and percentage changes relative to 52-week highs and lows. The goal is to provide insightful visualizations using Grafana to help investors and analysts make informed decisions.
+This Data Engineering project aims to **ingest, transform, and visualize** the data of 3 popular ETFs, SPY, DIA, and QQQ via a fully functional data pipeline. The data includes various metrics such as price, trading volume, intraday volatility, and percentage changes relative to 52-week highs and lows. The project primarily utilizes a variety of AWS products and Grafana for data visualization. The goal is to provide insightful visualizations using Grafana to help investors and analysts make informed decisions.
 
-## Features
-- Fetches and processes stock data from a specified API.
-- Stores processed data in AWS S3.
-- Uses AWS Glue and Athena for ETL (Extract, Transform, Load) operations.
-- Visualizes data with Grafana dashboards.
+## Architecture
+![architecture_diagram](https://github.com/Tongaonkar/stock-data-aws-project/assets/97370881/4d6b6cfd-2a5b-445b-a9a2-8aa7ab7e7d72)
+_Image Credit: David Freitag_
 
-## Technologies Used
-- **Programming Language**: Python
-- **Data Storage**: AWS S3
-- **Data Processing**: AWS Glue, AWS Athena
-- **Visualization**: Grafana
-- **Others**: AWS Lambda, AWS Kinesis Firehose
+The image above represents the data pipeline from start to finish.
 
-## Data Columns
+## Overview
+The first step in the program is an **External API** request from [stockdata.org](stockdata.org). This is done with a **Lambda** function that is automated with scheduling via **Eventbridge**. Next, the data is ingested by a **Kinesis Firehose**, and delivered into an **S3 Bucket**. From there, a **Glue Crawler** crawls through the landed data, identifying table schemas and partitions, as well as creating a table in Athena automatically. After the data is crawled, a series of **Glue Jobs** are executed, and data is transformed via SQL statements in Python wrappers. Notably, all job runs are logged and errors are stored in **CloudWatch** logs. The Crawler and Jobs are orchestrated through **Glue Workflows**, and the jobs will only run on the contingency of success from the previous job. A successful iteration of a Glue Workflow yields a "prod" table that is accessible through **Athena**. Athena is connected as a data source in **Grafana**, where data visualizations are created with SQL, and the completed dashboard is accessible.
+
+## Schema
 - `ticker`: Stock ticker symbol (e.g., SPY, QQQ, DIA)
 - `price`: Current price
 - `day_price_high`: Highest price of the day
@@ -44,16 +35,13 @@ This project is designed to analyze and visualize stock data for SPY, QQQ, and D
 - `volume`: Trading volume
 - `row_ts`: Timestamp of the data row
 
-## Setup and Installation
+  
+## Author
 
-### Prerequisites
-- Python 3.x
-- AWS CLI configured with appropriate permissions
-- Grafana installed and configured
+- [@Tongaonkar](https://www.github.com/Tongaonkar)
 
-### Installation
+## Acknowledgements
 
-1. **Clone the Repository**
-   ```sh
-   git clone https://github.com/yourusername/stock-data-analysis.git
-   cd stock-data-analysis
+ - [Build Your First Serverless Data Engineering Project Course](https://maven.com/david-freitag/first-serverless-de-project)
+ - [StockData.org API](https://www.stockdata.org/)
+ - [Grafana Dashboards](https://grafana.com/)

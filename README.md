@@ -67,7 +67,7 @@ The completed [Grafana Dashboard](https://miheertongaonkar.grafana.net/public-da
 
 - [@Tongaonkar](https://www.github.com/Tongaonkar)
 
-## Acknowledgements 🙌
+## Acknowledgements 👏
 
  - [Build Your First Serverless Data Engineering Project Course](https://maven.com/david-freitag/first-serverless-de-project)
  - [StockData.org API](https://www.stockdata.org/)

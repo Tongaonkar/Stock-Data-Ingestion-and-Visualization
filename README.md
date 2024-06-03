@@ -40,7 +40,7 @@ After the data is crawled, a series of **Glue Jobs** are executed, and data is t
 ![Screenshot 2024-06-02 151602](https://github.com/Tongaonkar/Stock-Data-Ingestion-and-Visualization/assets/97370881/747ecbf5-da98-457f-ab44-0166987d0588)
 _Query of stock_data_parquet_tbl_prod_
 
-A successful iteration of a Glue Workflow yields a "prod" table that is accessible through **Athena**. Athena is connected as a data source in **Grafana**, where data visualizations are created with SQL, and the completed dashboard is accessible.
+A successful iteration of a Glue Workflow produces a "prod" table that is queryable through **Athena**. Athena is connected as a data source in **Grafana**, where data visualizations are created with SQL, and the completed dashboard is accessible.
 
 ## Schema🗄️
 - `ticker`: Stock ticker symbol (e.g., SPY, QQQ, DIA)

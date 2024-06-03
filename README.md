@@ -1,4 +1,4 @@
-# Stock Data Ingestion and Visualization Project
+![image](https://github.com/Tongaonkar/Stock-Data-Ingestion-and-Visualization/assets/97370881/081930f1-d6a0-4043-9f9d-2bf2ae3a1b29)# Stock Data Ingestion and Visualization Project
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -16,10 +16,31 @@ This Data Engineering project aims to **ingest, transform, and visualize** the d
 ![architecture_diagram](https://github.com/Tongaonkar/stock-data-aws-project/assets/97370881/4d6b6cfd-2a5b-445b-a9a2-8aa7ab7e7d72)
 _Image Credit: David Freitag_
 
-The image above represents the data pipeline from start to finish.
+The diagram above represents the data pipeline from start to finish.
 
 ## Overview
-The first step in the program is an **External API** request from [stockdata.org](https://www.stockdata.org/). This is done with a **Lambda** function that is automated with scheduling via **Eventbridge**. Next, the data is ingested by a **Kinesis Firehose**, and delivered into an **S3 Bucket**. From there, a **Glue Crawler** crawls through the landed data, identifying table schemas and partitions, as well as creating a table in Athena automatically. After the data is crawled, a series of **Glue Jobs** are executed, and data is transformed via SQL statements in Python wrappers. Notably, all job runs are logged and errors are stored in **CloudWatch** logs. The Crawler and Jobs are orchestrated through **Glue Workflows**, and the jobs will only run on the contingency of success from the previous job. A successful iteration of a Glue Workflow yields a "prod" table that is accessible through **Athena**. Athena is connected as a data source in **Grafana**, where data visualizations are created with SQL, and the completed dashboard is accessible.
+![Screenshot 2024-06-02 173859](https://github.com/Tongaonkar/Stock-Data-Ingestion-and-Visualization/assets/97370881/0f6d7da8-6786-427c-873c-d2e1bb0f4029)
+_StockData.org API_
+
+The first step in the program is an **External API** request from [StockData.org](https://www.stockdata.org/). This is done with a **Lambda** function that is automated with **Eventbridge** scheduling.
+
+
+![Screenshot 2024-06-02 175237](https://github.com/Tongaonkar/Stock-Data-Ingestion-and-Visualization/assets/97370881/28f865d0-063b-4f02-aafc-681297294dfd)
+_Contents of S3 Bucket after Firehose Ingestion_
+
+Next, the data is ingested by a **Kinesis Firehose**, and delivered into an **S3 Bucket**. From there, a **Glue Crawler** crawls through the landed data, identifying table schemas and partitions, as well as creating a table in Athena automatically.
+
+
+![Screenshot 2024-05-31 170727](https://github.com/Tongaonkar/Stock-Data-Ingestion-and-Visualization/assets/97370881/62b3be25-411d-497e-9c23-e4c2deb3b98e)
+_Project Workflow_
+
+After the data is crawled, a series of **Glue Jobs** are executed, and data is transformed via SQL statements in Python wrappers. Notably, all job runs are logged and errors are stored in **CloudWatch** logs. The Crawler and Jobs are orchestrated through **Glue Workflows**, and the jobs will only run on the contingency of success from the previous job.
+
+
+![Screenshot 2024-06-02 151602](https://github.com/Tongaonkar/Stock-Data-Ingestion-and-Visualization/assets/97370881/747ecbf5-da98-457f-ab44-0166987d0588)
+_Query of stock_data_parquet_tbl_prod_
+
+A successful iteration of a Glue Workflow yields a "prod" table that is accessible through **Athena**. Athena is connected as a data source in **Grafana**, where data visualizations are created with SQL, and the completed dashboard is accessible.
 
 ## Schema
 - `ticker`: Stock ticker symbol (e.g., SPY, QQQ, DIA)

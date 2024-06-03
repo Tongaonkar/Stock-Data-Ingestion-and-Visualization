@@ -38,7 +38,7 @@ The first step in the program is an **External API** request from [stockdata.org
 
 ## Dashboard
 ![image](https://github.com/Tongaonkar/stock-data-aws-project/assets/97370881/444e834f-4cff-4cbc-8f7b-b4ea6a489290)
-_Final Grafana Dashboard_
+_Complete Grafana Dashboard, 6/2/2024_
 
 The completed [Grafana Dashboard](https://miheertongaonkar.grafana.net/public-dashboards/35cf38a346a142b8819014e46a32937e?orgId=1) displays visualizations of volume, intraday volatility, price change percentage, percentage below 52-week high, percentage below 52-week low, and the day price range.
   

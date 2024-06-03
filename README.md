@@ -1,4 +1,4 @@
-# Stock Data Ingestion and Visualization
+# Stock Data Ingestion and Visualization Project
 
 ## Table of Contents
 - [Introduction](#introduction)

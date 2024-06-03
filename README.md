@@ -1,6 +1,6 @@
-# Stock Data Ingestion and Visualization Project
+# Stock Data Ingestion and Visualization Project 📈
 
-## Table of Contents
+## Table of Contents 📚
 - [Introduction](#introduction)
 - [Architecture](#architecture)
 - [Overview](#overview)
@@ -9,16 +9,16 @@
 - [Author](#author)
 - [Acknowledgements](#Acknowledgements)
 
-## Introduction
+## Introduction 🌐
 This Data Engineering project aims to **ingest, transform, and visualize** the data of 3 popular ETFs, SPY, DIA, and QQQ via a fully functional data pipeline. The data includes various metrics such as price, trading volume, intraday volatility, and percentage changes relative to 52-week highs and lows. The project primarily utilizes a variety of AWS products and Grafana for data visualization. The goal is to provide insightful visualizations using Grafana to help investors and analysts make informed decisions.
 
-## Architecture
+## Architecture 📐
 ![architecture_diagram](https://github.com/Tongaonkar/stock-data-aws-project/assets/97370881/4d6b6cfd-2a5b-445b-a9a2-8aa7ab7e7d72)
 _Image Credit: David Freitag_
 
 The diagram above represents the data pipeline from start to finish.
 
-## Overview
+## Overview 📋
 ![Screenshot 2024-06-02 173859](https://github.com/Tongaonkar/Stock-Data-Ingestion-and-Visualization/assets/97370881/0f6d7da8-6786-427c-873c-d2e1bb0f4029)
 _StockData.org API_
 
@@ -42,7 +42,7 @@ _Query of stock_data_parquet_tbl_prod_
 
 A successful iteration of a Glue Workflow yields a "prod" table that is accessible through **Athena**. Athena is connected as a data source in **Grafana**, where data visualizations are created with SQL, and the completed dashboard is accessible.
 
-## Schema
+## Schema🗄️
 - `ticker`: Stock ticker symbol (e.g., SPY, QQQ, DIA)
 - `price`: Current price
 - `day_price_high`: Highest price of the day
@@ -57,17 +57,17 @@ A successful iteration of a Glue Workflow yields a "prod" table that is accessib
 - `volume`: Trading volume
 - `row_ts`: Timestamp of the data row
 
-## Dashboard
+## Dashboard 📊
 ![image](https://github.com/Tongaonkar/stock-data-aws-project/assets/97370881/444e834f-4cff-4cbc-8f7b-b4ea6a489290)
 _Complete Grafana Dashboard, 6/2/2024_
 
 The completed [Grafana Dashboard](https://miheertongaonkar.grafana.net/public-dashboards/35cf38a346a142b8819014e46a32937e?orgId=1) displays visualizations of volume, intraday volatility, price change percentage, percentage below 52-week high, percentage below 52-week low, and the day price range.
   
-## Author
+## Author ✍️
 
 - [@Tongaonkar](https://www.github.com/Tongaonkar)
 
-## Acknowledgements
+## Acknowledgements 🙌
 
  - [Build Your First Serverless Data Engineering Project Course](https://maven.com/david-freitag/first-serverless-de-project)
  - [StockData.org API](https://www.stockdata.org/)

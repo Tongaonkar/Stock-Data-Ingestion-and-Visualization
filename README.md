@@ -1,4 +1,4 @@
-![image](https://github.com/Tongaonkar/Stock-Data-Ingestion-and-Visualization/assets/97370881/081930f1-d6a0-4043-9f9d-2bf2ae3a1b29)# Stock Data Ingestion and Visualization Project
+# Stock Data Ingestion and Visualization Project
 
 ## Table of Contents
 - [Introduction](#introduction)

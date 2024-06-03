@@ -1,13 +1,13 @@
 # Stock Data Ingestion and Visualization Project 📈
 
 ## Table of Contents 📚
-- [Introduction](#introduction)
-- [Architecture](#architecture)
-- [Overview](#overview)
-- [Schema](#schema)
-- [Dashboard](#Dashboard)
-- [Author](#author)
-- [Acknowledgements](#Acknowledgements)
+- [Introduction](#introduction-)
+- [Architecture](#architecture-)
+- [Overview](#overview-)
+- [Schema](#schema%EF%B8%8F)
+- [Dashboard](#dashboard-)
+- [Author](#author-%EF%B8%8F)
+- [Acknowledgements](#acknowledgements-)
 
 ## Introduction 🌐
 This Data Engineering project aims to **ingest, transform, and visualize** the data of 3 popular ETFs, SPY, DIA, and QQQ via a fully functional data pipeline. The data includes various metrics such as price, trading volume, intraday volatility, and percentage changes relative to 52-week highs and lows. The project primarily utilizes a variety of AWS products and Grafana for data visualization. The goal is to provide insightful visualizations using Grafana to help investors and analysts make informed decisions.

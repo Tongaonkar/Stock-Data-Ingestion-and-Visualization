@@ -14,7 +14,7 @@ This Data Engineering project aims to **ingest, transform, and visualize** the d
 
 ## 📐 Architecture
 ![architecture_diagram](https://github.com/Tongaonkar/stock-data-aws-project/assets/97370881/4d6b6cfd-2a5b-445b-a9a2-8aa7ab7e7d72)
-_Image Credit: David Freitag_
+_End-to-End Pipeline_
 
 The diagram above represents the data pipeline from start to finish.
 
@@ -69,6 +69,5 @@ The completed Grafana Dashboard displays visualizations of volume, intraday vola
 
 ## 👏 Acknowledgements
 
- - [Build Your First Serverless Data Engineering Project Course](https://maven.com/david-freitag/first-serverless-de-project)
  - [StockData.org API](https://www.stockdata.org/)
  - [Grafana Dashboards](https://grafana.com/)
